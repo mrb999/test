@@ -1,28 +1,28 @@
 name: Logging
 on: push
 jobs:
-#  log:
-#   runs-on: ubuntu-latest
-#    steps:
-#      - run: echo "::debug::This is a debug log" #デバッグログ有効自のみ時出力
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "::debug::This is a debug log" #デバッグログ有効自のみ時出力
   bashTracing:
     runs-on: ubuntu-latest
     steps:
       - run: | 
-        set -x
-        date
-        hostname
-#  logGrouping:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - run: | 
-#        echo "::group::Show environment variables"
-#        printenv
-#        echo "::endgroup::"
-#  maskLog:
-#    runs-on: ubuntu-latest
-#    env:
-#      PASSWORD: SuperSecret
-#    steps:
-#      - run: echo "::add::mask::${PASSWORD}" #出力時にマスク
-#      - run: echo "$PASSWORD"
+          set -x
+          date
+          hostname
+  logGrouping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: | 
+          echo "::group::Show environment variables"
+          printenv
+          echo "::endgroup::"
+  maskLog:
+    runs-on: ubuntu-latest
+    env:
+      PASSWORD: SuperSecret
+    steps:
+      - run: echo "::add::mask::${PASSWORD}" #出力時にマスク
+      - run: echo "$PASSWORD"
