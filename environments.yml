@@ -1,0 +1,19 @@
+name: Environment
+on:
+  workflow_dispatch:
+    inputs:
+      environment-name:
+        type: environment  #入力パラメータでEnvironmentsを切り替え
+        default: test
+        required: false
+        description: Environment name
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment-name }} #利用するEnvironmentsの指定
+    env:
+      USERNAME: ${{ vars.USERNAME }}
+      PASSWORD: ${{ vars.PASS }}
+    steps:
+      - run: echo "${USERNAME}"
+      - run: echo "${PASSWORD:0:1} ${PASSWORD}"
