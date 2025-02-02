@@ -9,4 +9,4 @@ jobs:
       - shell: python #シェルにパイソンを指定
         run: |
           import os
-          print(os.environment['PATH'])
+          print(os.environ['PATH'])

@@ -1,0 +1,8 @@
+name: Conccurency test
+on: push
+concurrency: ${{ github.workflow }} #Concurrencyグループへワークフロー名を指定。同じ名前のワークフローが同時に複数起動できなくなる。実行待機する。
+jobs:
+  sleep:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 120
