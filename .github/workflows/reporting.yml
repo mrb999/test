@@ -7,3 +7,10 @@ jobs:
       - run: echo "::error::This is Error"
       - run: echo "::warning::This is a Warning"
       - run: echo "::notice::This is a Notice"
+  jobSummary:
+    runs-on: ubuntu-latest
+     steps:
+       - run: |
+           echo "## Examlple Title :rocket:" >> "${GITHUB_STEP_SUMMARY}"
+           echo "- first line" >> "${GITHUB_STEP_SUMMARY}"
+           echo "- second line" >> "${GITHUB_STEP_SUMMARY}"
