@@ -1,7 +1,7 @@
 name: Static analysis
 on:
   pull_request:
-  paths: ['.github/workflows/*.yml', '.github/workflows/*.yaml']
+    paths: ['.github/workflows/*.yml', '.github/workflows/*.yaml']
 defaults:               #デフォルトシェルの設定
   run:
     shell: bash
@@ -14,5 +14,5 @@ jobs:
     timeout-minutes: 5          #ワークフローの実行時間が5分越えたら停止（タイムアウトはステップレベル、ジョブレベルで指定可能)
     steps:
       - uses: actions/checkout@v4
-      - run: |              #静的解析の実行
-        docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint:latest
+      - run: |
+          docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint:latest
