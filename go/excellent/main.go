@@ -6,4 +6,5 @@ func EvenOrOdd(number int) string {
 	} else {
 		return "odd"
 	}
-}
+} 
+/*テスト*/
