@@ -5,3 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "::debug::This is a debug log" #デバッグログ有効自のみ時出力
+      -run: |
+        set -x
+        date
+        hostname
