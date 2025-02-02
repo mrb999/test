@@ -13,7 +13,7 @@ jobs:
     environment: ${{ inputs.environment-name }} #利用するEnvironmentsの指定
     env:
       USERNAME: ${{ vars.USERNAME }}
-      PASSWORD: ${{ vars.PASS }}
+      PASSWORD: ${{ secrets.PASS }}
     steps:
       - run: echo "${USERNAME}"
       - run: echo "${PASSWORD:0:1} ${PASSWORD#?}"
