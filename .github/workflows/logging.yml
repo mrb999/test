@@ -24,5 +24,5 @@ jobs:
     env:
       PASSWORD: SuperSecret
     steps:
-      - run: echo "::add::mask::${PASSWORD}" #出力時にマスク
+      - run: echo "::add-mask::${PASSWORD}" #出力時にマスク
       - run: echo "$PASSWORD"
