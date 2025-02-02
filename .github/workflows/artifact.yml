@@ -9,7 +9,7 @@ jobs:
         with:
           name: uploaded #アーティファクト名
           path: date.txt #アップロード対象のパス
-          retention-days: アーティファクトの保存期間
+          retention-days: 7 #アーティファクトの保存期間
   download:
     runs-on: ubuntu-latest
     needs: [upload]
