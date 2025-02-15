@@ -14,7 +14,7 @@ on:
     outputs:
       message:
         value: ${{ jobs.comment.outputs.pr-comment }}
-        descrioption: メッセージ
+        description: メッセージ
 jobs:
   comment:
     runs-on: ubuntu-latest
